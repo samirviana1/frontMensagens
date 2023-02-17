@@ -74,16 +74,6 @@ function Signup() {
 
   const cadastrar = () => {
     if (handleSignup()) {
-      let buscarUsuarios = usuarioRedux.listaUsuario.some(
-        (usuario: Usuario) => usuario.email === email
-      );
-
-      if (buscarUsuarios) {
-        alert("E-mail já existe");
-        limpaCampos();
-        return false;
-      }
-
       const usuarioNovo: Partial<Usuario> = {
         name,
         email,
