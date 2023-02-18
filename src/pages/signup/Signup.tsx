@@ -80,10 +80,8 @@ function Signup() {
         senha,
       };
       dispatch(postCadastro(usuarioNovo));
-
-      alert("Conta criada...");
       limpaCampos();
-      navigate("/");
+      /*navigate("/");*/
     }
     return true;
   };
