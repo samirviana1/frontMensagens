@@ -31,7 +31,7 @@ function Signin() {
   }, [usuarioRedux.usuarioOn]);
 
   const Logar = () => {
-    const data = {email, senha};
+    const data = {email, password: senha};
 
     dispatch(postLogin(data));
     console.log(data);

@@ -54,8 +54,8 @@ export const postCadastro = createAsyncThunk(
 
 export const postLogin = createAsyncThunk(
   "login/post",
-  async ({email, senha}: Partial<Usuario>) => {
-    const response = await instace.doPost("/login", {email, senha});
+  async ({email, password}: Partial<Usuario>) => {
+    const response = await instace.doPost("/login", {email, password});
     if (response?.status !== 200) {
       return null;
     }
