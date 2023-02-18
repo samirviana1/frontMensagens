@@ -13,6 +13,7 @@ import Input from "../../components/input/Input";
 
 import ButtonCad from "../../components/button/ButtonCad";
 import {
+  clearMensagem,
   getAllUser,
   postCadastro,
   userSelectAll,
@@ -38,6 +39,14 @@ function Signup() {
   const [senha, setSenha] = useState("");
   const [repetirSenha, setRepetirSenha] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (usuarioRedux.mensagem.tipo) {
+      alert(usuarioRedux.mensagem);
+      dispatch(clearMensagem());
+      navigate("/");
+    }
+  }, [usuarioRedux.mensagem]);
 
   useEffect(() => {
     dispatch(getAllUser());
@@ -83,6 +92,7 @@ function Signup() {
       limpaCampos();
       /*navigate("/");*/
     }
+
     return true;
   };
   return (

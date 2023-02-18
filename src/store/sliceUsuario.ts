@@ -89,6 +89,9 @@ const usuarioSlice = createSlice({
     setUsuarioOff: (state) => {
       state.usuarioOn = undefined;
     },
+    clearMensagem: (state) => {
+      state.mensagem = initialState.mensagem;
+    },
   },
   extraReducers: ({addCase}) => {
     addCase(postCadastro.fulfilled, (state, action) => {
@@ -104,5 +107,6 @@ const usuarioSlice = createSlice({
   },
 });
 
-export const {setListaUsuario, setUsuarioOff} = usuarioSlice.actions;
+export const {setListaUsuario, setUsuarioOff, clearMensagem} =
+  usuarioSlice.actions;
 export default usuarioSlice.reducer;
