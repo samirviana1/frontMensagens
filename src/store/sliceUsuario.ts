@@ -8,7 +8,7 @@ import instace from "../service/api";
 export interface Usuario {
   name: string;
   email: string;
-  senha: string;
+  password: string;
 }
 
 export interface UsuarioLogado {

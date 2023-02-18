@@ -77,7 +77,7 @@ function Signup() {
       const usuarioNovo: Partial<Usuario> = {
         name,
         email,
-        senha,
+        password: senha,
       };
       dispatch(postCadastro(usuarioNovo));
       limpaCampos();
