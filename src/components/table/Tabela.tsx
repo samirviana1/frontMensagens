@@ -58,8 +58,6 @@ export default function Tabela() {
             {row.length && (
               <TableBody>
                 {row.map((mensagens, index) => {
-                  console.log(mensagens.id);
-
                   return (
                     <MensagensRow
                       detalhamento={mensagens.detalhamento}
