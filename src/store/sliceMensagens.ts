@@ -8,8 +8,8 @@ import {
 
 export interface Mensagem {
   id: string;
-  descricao: string;
-  detalhamento: string;
+  title: string;
+  description: string;
   idUsuario: string;
 }
 
@@ -83,10 +83,10 @@ export const postStickynotes = createAsyncThunk(
 
 export const putStickynotes = createAsyncThunk(
   "putStickynotes/put",
-  async ({descricao, detalhamento, id}: Partial<Mensagem>) => {
+  async ({title, description, id}: Partial<Mensagem>) => {
     const response = await instace.doPut(`/notes/${id}`, {
-      descricao,
-      detalhamento,
+      title,
+      description,
     });
     if (response?.status !== 200) {
       return null;
@@ -118,14 +118,14 @@ const mensagensSlice = createSlice({
       state.listaMensagem = filterMensagens;
     },
     updadeMensagembyID: (state, action) => {
-      const {id, descricao, detalhamento} = action.payload;
+      const {id, title, description} = action.payload;
 
       const index = state.listaMensagem.findIndex((i) => i.id === id);
 
       const editMsg: Mensagem = {
         id,
-        descricao,
-        detalhamento,
+        title,
+        description,
         idUsuario: state.listaMensagem[index].idUsuario,
       };
       state.listaMensagem.splice(index, 1, editMsg);

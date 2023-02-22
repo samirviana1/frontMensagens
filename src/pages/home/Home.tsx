@@ -8,13 +8,18 @@ import Tabela from "../../components/table/Tabela";
 import UserBar from "../../components/usebar/UseBar";
 import {useDispatch, useSelector} from "react-redux";
 import {v4 as uuidv4} from "uuid";
-import {Mensagem, setNovaMensagem} from "../../store/sliceMensagens";
+import {
+  Mensagem,
+  postStickynotes,
+  setNovaMensagem,
+} from "../../store/sliceMensagens";
 import {TrabalhoDeModulo} from "../../store/rootReducer";
 import {useState} from "react";
 import ModalMsg from "../../components/modal/Modal";
+import {AppDispatch} from "../../store";
 
 function Home() {
-  const dispacth = useDispatch();
+  const dispacth = useDispatch<AppDispatch>();
   const usuariologado = useSelector(
     ({usuarios}: TrabalhoDeModulo) => usuarios.usuarioOn!
   );
@@ -25,7 +30,7 @@ function Home() {
   const [detalhamento, setDetalhamento] = useState("");
 
   const salvarMensagens = () => {
-    const mensagemNova: Mensagem = {
+    /*const mensagemNova: Mensagem = {
       id: uuidv4(),
       descricao: descricao,
       detalhamento: detalhamento,
@@ -34,9 +39,9 @@ function Home() {
     if (mensagemNova.descricao === "" || mensagemNova.detalhamento === "") {
       alert("Não é possível enviar valores vazios!");
       return;
-    }
+    }*/
 
-    dispacth(setNovaMensagem(mensagemNova));
+    dispacth(postStickynotes({title: descricao, description: detalhamento}));
     setDescricao("");
     setDetalhamento("");
   };

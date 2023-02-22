@@ -60,8 +60,8 @@ export default function Tabela() {
                 {row.map((mensagens, index) => {
                   return (
                     <MensagensRow
-                      detalhamento={mensagens.detalhamento}
-                      descricao={mensagens.descricao}
+                      detalhamento={mensagens.description}
+                      descricao={mensagens.title}
                       id={index + 1}
                       chave={mensagens.id}
                       key={mensagens.id}
