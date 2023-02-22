@@ -24,7 +24,7 @@ function Home() {
     ({usuarios}: TrabalhoDeModulo) => usuarios.usuarioOn!
   );
 
-  console.log(usuariologado);
+  console.log("usuarioLogado", usuariologado);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
