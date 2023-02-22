@@ -1,3 +1,4 @@
+import instace from "../service/api";
 import {TrabalhoDeModulo} from "./rootReducer";
 import {
   createSlice,
@@ -43,6 +44,65 @@ const initialState: MensagemEstado = {
   selectId: null,
 };
 
+export const getAllStickynotes = createAsyncThunk(
+  "getAllStickynotes/get",
+  async (_, {dispatch}) => {
+    const response = await instace.doGet("/notes");
+    if (response?.status !== 200) {
+      dispatch(setNovaMensagem([]));
+      return [];
+    }
+    dispatch(setNovaMensagem(response.data.dados));
+    return [];
+  }
+);
+
+/*export const getIdStickynotes = createAsyncThunk(
+  "getIdStickynotes/get",
+  async (_, {dispatch}) => {
+    const response = await instace.doGet("/notes:id");
+    if (response?.status !== 200) {
+      dispatch(setNovaMensagem([]));
+      return null;
+    }
+    dispatch(response.data.mensagemId);
+    return null;
+  }
+);*/
+
+export const postStickynotes = createAsyncThunk(
+  "postStickynotes/post",
+  async (body: object, {dispatch}) => {
+    const response = await instace.doPost("/notes", body);
+    if (response?.data !== 200) {
+      return null;
+    }
+    return response?.data;
+  }
+);
+
+export const putStickynotes = createAsyncThunk(
+  "putStickynotes/put",
+  async ({descricao, detalhamento, id}: Partial<Mensagem>) => {
+    const response = await instace.doPut(`/notes/${id}`, {
+      descricao,
+      detalhamento,
+    });
+    if (response?.status !== 200) {
+      return null;
+    }
+    return response?.data;
+  }
+);
+
+export const deleteStickynotes = createAsyncThunk(
+  "deleteStickynotes/delete",
+  async (id) => {
+    const response = await instace.doDelete(`/notes/${id}`);
+    return response?.data;
+  }
+);
+
 export const mensagensSelectAll = (state: TrabalhoDeModulo) => state.mensagens;
 
 const mensagensSlice = createSlice({
@@ -77,7 +137,20 @@ const mensagensSlice = createSlice({
       state.showModal = action.payload;
     },
   },
-  extraReducers: {},
+  extraReducers: ({addCase}) => {
+    addCase(getAllStickynotes.fulfilled, (state, action) => {
+      state.listaMensagem = action.payload;
+    });
+    addCase(postStickynotes.fulfilled, (state, action) => {
+      state.listaMensagem = action.payload;
+    });
+    addCase(putStickynotes.fulfilled, (state, action) => {
+      state.listaMensagem = action.payload;
+    });
+    addCase(deleteStickynotes.fulfilled, (state, action) => {
+      state.listaMensagem = action.payload;
+    });
+  },
 });
 
 export const {
