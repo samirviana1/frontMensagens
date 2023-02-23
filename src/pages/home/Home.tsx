@@ -48,6 +48,7 @@ function Home() {
     }
 
     dispacth(postStickynotes({title: descricao, description: detalhamento}));
+    console.log(postStickynotes);
     setDescricao("");
     setDetalhamento("");
   };
