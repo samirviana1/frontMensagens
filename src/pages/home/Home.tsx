@@ -31,7 +31,7 @@ function Home() {
   //console.log("usuarioLogado", usuariologado);
   useEffect(() => {
     dispacth(getAllStickynotes());
-  }, [userLogadoSelect]);
+  }, []);
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
 
