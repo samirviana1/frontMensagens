@@ -35,7 +35,7 @@ function Home() {
   }, [usuariologado.usuarioOn]);*/
 
   useEffect(() => {
-    dispacth(getAllStickynotes());
+    dispacth(getIdStickynotes());
   }, [noteUserLogado]);
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
