@@ -1,4 +1,3 @@
-import {Copyright} from "@mui/icons-material";
 import {Button, CssBaseline} from "@mui/material";
 import {Box, Container} from "@mui/system";
 import Paper from "@mui/material/Paper";
@@ -38,11 +37,11 @@ function Home() {
       descricao: descricao,
       detalhamento: detalhamento,
       idUsuario: usuariologado.id,
-    };
-    if (mensagemNova.descricao === "" || mensagemNova.detalhamento === "") {
+    };*/
+    if (descricao === "" || detalhamento === "") {
       alert("Não é possível enviar valores vazios!");
       return;
-    }*/
+    }
 
     dispacth(postStickynotes({title: descricao, description: detalhamento}));
     setDescricao("");
@@ -80,7 +79,6 @@ function Home() {
           </Box>
           <Tabela />
         </Box>
-        <Copyright sx={{mt: 5}} />
       </Container>
       <ModalMsg />
     </>
