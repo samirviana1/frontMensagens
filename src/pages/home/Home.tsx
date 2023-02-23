@@ -19,17 +19,21 @@ import {useEffect, useState} from "react";
 import ModalMsg from "../../components/modal/Modal";
 import {AppDispatch} from "../../store";
 import {postLogin, userSelectAll} from "../../store/sliceUsuario";
+import {useNavigate} from "react-router-dom";
 
 function Home() {
   const dispacth = useDispatch<AppDispatch>();
-  /*const usuariologado = useSelector(
-    ({usuarios}: TrabalhoDeModulo) => usuarios.usuarioOn!
-  );*/
-
+  const usuariologado = useSelector(userSelectAll);
+  const navigate = useNavigate();
   const noteUserLogado = useSelector(getIdStickynotes);
   const userLogadoSelect = useSelector(postLogin);
 
-  //console.log("usuarioLogado", usuariologado);
+  useEffect(() => {
+    if (!usuariologado.usuarioOn) {
+      navigate("/login");
+    }
+  }, [usuariologado.usuarioOn]);
+
   useEffect(() => {
     dispacth(getAllStickynotes());
   }, [noteUserLogado]);
