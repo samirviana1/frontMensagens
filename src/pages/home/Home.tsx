@@ -10,6 +10,7 @@ import {v4 as uuidv4} from "uuid";
 import {
   Mensagem,
   getAllStickynotes,
+  getIdStickynotes,
   postStickynotes,
   setNovaMensagem,
 } from "../../store/sliceMensagens";
@@ -25,13 +26,13 @@ function Home() {
     ({usuarios}: TrabalhoDeModulo) => usuarios.usuarioOn!
   );*/
 
-  const notesGetAll = useSelector(getAllStickynotes);
+  const noteUserLogado = useSelector(getIdStickynotes);
   const userLogadoSelect = useSelector(postLogin);
 
   //console.log("usuarioLogado", usuariologado);
   useEffect(() => {
     dispacth(getAllStickynotes());
-  }, []);
+  }, [noteUserLogado]);
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
 
