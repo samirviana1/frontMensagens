@@ -50,10 +50,9 @@ export const getAllStickynotes = createAsyncThunk(
     const response = await instace.doGet("/notes");
     if (response?.status !== 200) {
       dispatch(setNovaMensagem([]));
-      return [];
+      return;
     }
     dispatch(setNovaMensagem(response.data.dados));
-    return [];
   }
 );
 
@@ -138,9 +137,6 @@ const mensagensSlice = createSlice({
     },
   },
   extraReducers: ({addCase}) => {
-    addCase(getAllStickynotes.fulfilled, (state, action) => {
-      state.listaMensagem = action.payload;
-    });
     addCase(postStickynotes.fulfilled, (state, action) => {
       state.listaMensagem = action.payload;
     });
