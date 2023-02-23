@@ -23,8 +23,8 @@ export default function ModalMsg() {
   useEffect(() => {
     if (selectId) {
       const findMsg = listaMensagem.find((i) => i.id === selectId)!;
-      setDescricao(findMsg.descricao);
-      setDetalhamento(findMsg.detalhamento);
+      setDescricao(findMsg.title);
+      setDetalhamento(findMsg.description);
     }
   }, [selectId]);
 
