@@ -17,17 +17,21 @@ import {TrabalhoDeModulo} from "../../store/rootReducer";
 import {useEffect, useState} from "react";
 import ModalMsg from "../../components/modal/Modal";
 import {AppDispatch} from "../../store";
+import {postLogin, userSelectAll} from "../../store/sliceUsuario";
 
 function Home() {
   const dispacth = useDispatch<AppDispatch>();
-  const usuariologado = useSelector(
+  /*const usuariologado = useSelector(
     ({usuarios}: TrabalhoDeModulo) => usuarios.usuarioOn!
-  );
+  );*/
 
-  console.log("usuarioLogado", usuariologado);
+  const notesGetAll = useSelector(getAllStickynotes);
+  const userLogadoSelect = useSelector(postLogin);
+
+  //console.log("usuarioLogado", usuariologado);
   useEffect(() => {
     dispacth(getAllStickynotes());
-  }, []);
+  }, [notesGetAll]);
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
 
@@ -50,7 +54,7 @@ function Home() {
   return (
     <>
       <Container component="main" min-width="xs" maxWidth="xl">
-        <UserBar usuario={usuariologado.name} />
+        <UserBar usuario={postLogin.name} />
         <CssBaseline />
         <Box
           sx={{
