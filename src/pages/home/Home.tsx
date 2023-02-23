@@ -28,11 +28,11 @@ function Home() {
   const noteUserLogado = useSelector(getIdStickynotes);
   const userLogadoSelect = useSelector(postLogin);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (!usuariologado.usuarioOn) {
       navigate("/login");
     }
-  }, [usuariologado.usuarioOn]);
+  }, [usuariologado.usuarioOn]);*/
 
   useEffect(() => {
     dispacth(getAllStickynotes());
