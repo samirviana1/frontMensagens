@@ -33,7 +33,7 @@ export default function Tabela() {
   useEffect(() => {
     if (listaMensagem.length) {
       const minhaMensagens = listaMensagem.filter(
-        (i) => i.idUsuario === usuarioOn?.id
+        (i) => i.uid === usuarioOn?.id
       );
       setRow(minhaMensagens);
     }

@@ -10,7 +10,7 @@ export interface Mensagem {
   id: string;
   title: string;
   description: string;
-  idUsuario: string;
+  uid: string;
 }
 
 export interface MensagemEstado {
@@ -56,18 +56,16 @@ export const getAllStickynotes = createAsyncThunk(
   }
 );
 
-/*export const getIdStickynotes = createAsyncThunk(
+export const getIdStickynotes = createAsyncThunk(
   "getIdStickynotes/get",
-  async (_, {dispatch}) => {
-    const response = await instace.doGet("/notes:id");
+  async (uid, {dispatch}) => {
+    const response = await instace.doGet(`/notes/${uid}`);
     if (response?.status !== 200) {
-      dispatch(setNovaMensagem([]));
       return null;
     }
-    dispatch(response.data.mensagemId);
-    return null;
+    return response?.data;
   }
-);*/
+);
 
 export const postStickynotes = createAsyncThunk(
   "postStickynotes/post",
@@ -125,7 +123,7 @@ const mensagensSlice = createSlice({
         id,
         title,
         description,
-        idUsuario: state.listaMensagem[index].idUsuario,
+        uid: state.listaMensagem[index].uid,
       };
       state.listaMensagem.splice(index, 1, editMsg);
     },
