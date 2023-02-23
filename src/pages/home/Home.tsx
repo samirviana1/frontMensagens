@@ -28,11 +28,11 @@ function Home() {
   const noteUserLogado = useSelector(getIdStickynotes);
   const userLogadoSelect = useSelector(postLogin);
 
-  /*useEffect(() => {
+  useEffect(() => {
     if (!usuariologado.usuarioOn) {
       navigate("/login");
     }
-  }, [usuariologado.usuarioOn]);*/
+  }, [usuariologado.usuarioOn]);
 
   useEffect(() => {
     dispacth(getIdStickynotes());
@@ -41,12 +41,6 @@ function Home() {
   const [detalhamento, setDetalhamento] = useState("");
 
   const salvarMensagens = () => {
-    /*const mensagemNova: Mensagem = {
-      id: uuidv4(),
-      descricao: descricao,
-      detalhamento: detalhamento,
-      idUsuario: usuariologado.id,
-    };*/
     if (descricao === "" || detalhamento === "") {
       alert("Não é possível enviar valores vazios!");
       return;
