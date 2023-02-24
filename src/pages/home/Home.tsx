@@ -49,7 +49,6 @@ function Home() {
 
     dispacth(
       postStickynotes({
-        id: uuidv4(),
         title: descricao,
         description: detalhamento,
         uid: usuariologado.usuarioOn!.id,
