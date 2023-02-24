@@ -62,7 +62,7 @@ function Home() {
   return (
     <>
       <Container component="main" min-width="xs" maxWidth="xl">
-        <UserBar usuario={usuariologado.usuarioOn!.name} />
+        <UserBar usuario={postLogin.name} />
         <CssBaseline />
         <Box
           sx={{
