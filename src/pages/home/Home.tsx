@@ -32,7 +32,8 @@ function Home() {
     if (!userLogon.usuarioOn) {
       navigate("/login");
     }
-  }, [userLogon.usuarioOn]);
+  }, [userLogon]);
+  console.log(userLogon);
 
   useEffect(() => {
     dispacth(getIdStickynotes());
