@@ -47,7 +47,14 @@ function Home() {
       return;
     }
 
-    dispacth(postStickynotes({title: descricao, description: detalhamento}));
+    dispacth(
+      postStickynotes({
+        id: uuidv4(),
+        title: descricao,
+        description: detalhamento,
+        uid: usuariologado.usuarioOn?.id,
+      })
+    );
     console.log(postStickynotes);
     setDescricao("");
     setDetalhamento("");
@@ -55,7 +62,7 @@ function Home() {
   return (
     <>
       <Container component="main" min-width="xs" maxWidth="xl">
-        <UserBar usuario={postLogin.name} />
+        <UserBar usuario={usuariologado.usuarioOn!.name} />
         <CssBaseline />
         <Box
           sx={{
