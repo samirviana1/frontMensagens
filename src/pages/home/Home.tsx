@@ -33,7 +33,7 @@ function Home() {
       navigate("/login");
     }
   }, [userLogon]);
-  console.log(userLogon);
+  console.log("usuarioOn", userLogon);
 
   useEffect(() => {
     dispacth(getIdStickynotes());
