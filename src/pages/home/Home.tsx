@@ -52,7 +52,7 @@ function Home() {
         id: uuidv4(),
         title: descricao,
         description: detalhamento,
-        uid: usuariologado.usuarioOn?.id,
+        uid: usuariologado.usuarioOn!.id,
       })
     );
     console.log(postStickynotes);
