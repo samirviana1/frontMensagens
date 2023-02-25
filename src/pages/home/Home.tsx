@@ -29,7 +29,8 @@ function Home() {
   const userLogadoSelect = useSelector(postLogin);
 
   useEffect(() => {
-    if (!userLogadoSelect) {
+    dispacth(userLogadoSelect);
+    if (userLogadoSelect === undefined) {
       navigate("/login");
     }
   }, [userLogadoSelect]);
