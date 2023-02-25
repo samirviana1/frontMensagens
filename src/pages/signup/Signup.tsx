@@ -89,7 +89,7 @@ function Signup() {
         password: senha,
       };
       dispatch(postCadastro(usuarioNovo));
-      console.log(usuarioNovo);
+      console.log("postNovoUsuario", usuarioNovo);
 
       limpaCampos();
       /*navigate("/");*/
