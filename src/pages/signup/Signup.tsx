@@ -89,6 +89,8 @@ function Signup() {
         password: senha,
       };
       dispatch(postCadastro(usuarioNovo));
+      console.log(usuarioNovo);
+
       limpaCampos();
       /*navigate("/");*/
     }
