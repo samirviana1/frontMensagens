@@ -29,7 +29,7 @@ function Home() {
   const userLogadoSelect = useSelector(postLogin);
 
   useEffect(() => {
-    if (userLogon.usuarioOn?.id === null) {
+    if (userLogon.usuarioOn?.id === undefined) {
       navigate("/login");
     }
   }, [userLogon.usuarioOn]);
@@ -37,7 +37,7 @@ function Home() {
 
   useEffect(() => {
     dispacth(getIdStickynotes());
-  }, [noteUserLogado]);
+  }, []);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
@@ -52,7 +52,7 @@ function Home() {
       postStickynotes({
         title: descricao,
         description: detalhamento,
-        uid: userLogon.usuarioOn!.id,
+        uid: userLogon.usuarioOn?.id,
       })
     );
     console.log(postStickynotes);
@@ -62,7 +62,7 @@ function Home() {
   return (
     <>
       <Container component="main" min-width="xs" maxWidth="xl">
-        <UserBar usuario={userLogon.usuarioOn!.name} />
+        <UserBar usuario={userLogon.usuarioOn?.name!} />
         <CssBaseline />
         <Box
           sx={{
