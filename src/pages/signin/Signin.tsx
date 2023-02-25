@@ -30,10 +30,10 @@ function Signin() {
   const [senha, setSenha] = useState("");
 
   useEffect(() => {
-    if (usuarioRedux.usuarioOn) {
+    if (usuarioRedux) {
       navigate("/home");
     }
-  }, [usuarioRedux.usuarioOn]);
+  }, [usuarioRedux]);
 
   const Logar = () => {
     const data = {email, password: senha};
