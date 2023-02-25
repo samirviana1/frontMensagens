@@ -29,10 +29,10 @@ function Home() {
   const userLogadoSelect = useSelector(postLogin);
 
   useEffect(() => {
-    if (userLogon.usuarioOn === undefined) {
+    if (userLogon.usuarioOn?.id === null) {
       navigate("/login");
     }
-  }, [userLogon]);
+  }, [userLogon.usuarioOn]);
   console.log("usuarioOn", userLogon);
 
   useEffect(() => {
