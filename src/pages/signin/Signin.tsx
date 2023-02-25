@@ -7,7 +7,12 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import {Copyright} from "@mui/icons-material";
 import {Paper} from "@mui/material";
-import {postLogin, userSelectAll, Usuario} from "../../store/sliceUsuario";
+import {
+  postCadastro,
+  postLogin,
+  userSelectAll,
+  Usuario,
+} from "../../store/sliceUsuario";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
@@ -18,7 +23,7 @@ import ButtonLog from "../../components/button/ButtonLog";
 function Signin() {
   const dispatch = useDispatch<AppDispatch>();
   const usuarioRedux = useSelector(userSelectAll);
-
+  const newUser = useSelector(postCadastro);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");

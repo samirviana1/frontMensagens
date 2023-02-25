@@ -6,6 +6,7 @@ import {TrabalhoDeModulo} from "./rootReducer";
 import instace from "../service/api";
 
 export interface Usuario {
+  id?: string;
   name: string;
   email: string;
   password: string;
