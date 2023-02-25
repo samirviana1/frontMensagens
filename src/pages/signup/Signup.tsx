@@ -10,7 +10,7 @@ import {Copyright} from "@mui/icons-material";
 import {Paper} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import Input from "../../components/input/Input";
-
+import {v4 as uuid} from "uuid";
 import ButtonCad from "../../components/button/ButtonCad";
 import {
   clearMensagem,
@@ -84,6 +84,7 @@ function Signup() {
   const cadastrar = () => {
     if (handleSignup()) {
       const usuarioNovo: Partial<Usuario> = {
+        id: uuid(),
         name,
         email,
         password: senha,
