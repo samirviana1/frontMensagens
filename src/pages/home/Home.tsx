@@ -32,7 +32,7 @@ function Home() {
     if (userLogon.usuarioOn?.id === undefined) {
       navigate("/login");
     }
-  }, [userLogon.usuarioOn]);
+  }, []);
   console.log("usuarioOn", userLogon);
 
   useEffect(() => {
