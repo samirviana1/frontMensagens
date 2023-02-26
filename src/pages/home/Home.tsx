@@ -24,16 +24,17 @@ import {useNavigate} from "react-router-dom";
 function Home() {
   const dispacth = useDispatch<AppDispatch>();
   const userLogon = useSelector(userSelectAll);
+  const {usuarioOn} = useSelector(userSelectAll);
   const navigate = useNavigate();
   const noteUserLogado = useSelector(getIdStickynotes);
   const userLogadoSelect = useSelector(postLogin);
 
   useEffect(() => {
-    if (userLogon.usuarioOn?.id === undefined) {
+    if (usuarioOn === undefined) {
       navigate("/login");
     }
-  }, []);
-  console.log("usuarioOn", userLogon);
+  }, [usuarioOn]);
+  console.log("usuarioOn", usuarioOn);
 
   useEffect(() => {
     dispacth(getIdStickynotes());
@@ -52,7 +53,7 @@ function Home() {
       postStickynotes({
         title: descricao,
         description: detalhamento,
-        uid: userLogon.usuarioOn?.id,
+        uid: usuarioOn?.id,
       })
     );
     console.log(postStickynotes);
@@ -62,7 +63,7 @@ function Home() {
   return (
     <>
       <Container component="main" min-width="xs" maxWidth="xl">
-        <UserBar usuario={userLogon.usuarioOn?.name!} />
+        <UserBar usuario={usuarioOn?.name!} />
         <CssBaseline />
         <Box
           sx={{
