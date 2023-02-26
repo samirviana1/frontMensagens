@@ -75,7 +75,7 @@ export const postStickynotes = createAsyncThunk(
     if (response?.data !== 200) {
       return null;
     }
-    dispatch(getIdStickynotes);
+    dispatch(getIdStickynotes());
   }
 );
 
