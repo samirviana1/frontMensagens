@@ -25,7 +25,7 @@ const StyledTableCell = styled(TableCell)(({theme}) => ({
 }));
 
 export default function Tabela() {
-  const {usuarioOn} = useSelector(userSelectAll);
+  const usuarioOn = useSelector(userSelectAll);
   const listaMensagem = useSelector(
     (state: TrabalhoDeModulo) => state.mensagens.listaMensagem
   );
@@ -33,12 +33,12 @@ export default function Tabela() {
   useEffect(() => {
     if (listaMensagem.length) {
       const minhaMensagens = listaMensagem.filter(
-        (i) => i.uid === usuarioOn?.id
+        (i) => i.uid === usuarioOn.usuarioOn?.id
       );
       setRow(minhaMensagens);
       console.log("effect", minhaMensagens);
     }
-  }, [listaMensagem, usuarioOn]);
+  }, [listaMensagem]);
   return (
     <>
       {row.length ? (
