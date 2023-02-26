@@ -35,14 +35,14 @@ function Home() {
   const listaMensagem = useSelector(mensagensSelectAll);
 
   useEffect(() => {
-    if (!usuarioLogado.usuarioOn) {
+    if (usuarioLogado.usuarioOn === undefined) {
       navigate("/");
     }
   }, [usuarioLogado.usuarioOn]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     dispacth(noteUserLogado);
-  }, [noteUserLogado]);*/
+  }, [noteUserLogado]);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
