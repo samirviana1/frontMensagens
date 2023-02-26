@@ -31,7 +31,6 @@ function Home() {
   const userId = useSelector(getIdUserLogado);
   const navigate = useNavigate();
   const noteUserLogado = useSelector(getIdStickynotes);
-  const createNota = useSelector(postStickynotes);
 
   useEffect(() => {
     if (usuarioOn === undefined) {
@@ -51,17 +50,14 @@ function Home() {
       alert("Não é possível enviar valores vazios!");
       return;
     }
-
-    dispacth(
-      postStickynotes({
-        id: uuidv4(),
-        title: descricao,
-        description: detalhamento,
-        uid: usuarioOn?.id,
-      })
-    );
-
-    console.log(createNota);
+    const newMensagem: Partial<Mensagem> = {
+      id: uuidv4(),
+      title: descricao,
+      description: detalhamento,
+      uid: usuarioOn?.id,
+    };
+    dispacth(postStickynotes(newMensagem));
+    console.log(newMensagem);
 
     setDescricao("");
     setDetalhamento("");
