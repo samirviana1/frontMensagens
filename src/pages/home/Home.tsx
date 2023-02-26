@@ -33,7 +33,7 @@ function Home() {
   const noteUserLogado = useSelector(getIdStickynotes);
 
   useEffect(() => {
-    if (usuarioOn === undefined) {
+    if (usuarioOn?.id === undefined) {
       navigate("/");
     }
   }, [usuarioOn]);
