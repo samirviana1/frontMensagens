@@ -1,4 +1,4 @@
-import {Button, CssBaseline} from "@mui/material";
+import {Button, CssBaseline, listItemButtonClasses} from "@mui/material";
 import {Box, Container} from "@mui/system";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
@@ -11,6 +11,7 @@ import {
   Mensagem,
   getAllStickynotes,
   getIdStickynotes,
+  mensagensSelectAll,
   postStickynotes,
   setNovaMensagem,
 } from "../../store/sliceMensagens";
@@ -31,6 +32,7 @@ function Home() {
   const userId = useSelector(getIdUserLogado);
   const navigate = useNavigate();
   const noteUserLogado = useSelector(getIdStickynotes);
+  const listaMensagem = useSelector(mensagensSelectAll);
 
   useEffect(() => {
     if (usuarioOn === undefined) {
@@ -61,6 +63,7 @@ function Home() {
 
     setDescricao("");
     setDetalhamento("");
+    console.log(listaMensagem);
   };
   return (
     <>
