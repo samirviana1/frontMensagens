@@ -60,6 +60,7 @@ function Home() {
     };
     dispacth(postStickynotes(newMensagem));
     console.log(newMensagem);
+    console.log(usuarioOn?.id);
 
     setDescricao("");
     setDetalhamento("");
