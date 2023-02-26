@@ -137,13 +137,13 @@ const mensagensSlice = createSlice({
   },
   extraReducers: ({addCase}) => {
     addCase(postStickynotes.fulfilled, (state, action) => {
-      state.mensagem = action.payload;
+      state.listaMensagem = action.payload;
     });
     addCase(putStickynotes.fulfilled, (state, action) => {
-      state.mensagem = action.payload;
+      state.listaMensagem = action.payload;
     });
     addCase(deleteStickynotes.fulfilled, (state, action) => {
-      state.mensagem = action.payload;
+      state.listaMensagem = action.payload;
     });
   },
 });
