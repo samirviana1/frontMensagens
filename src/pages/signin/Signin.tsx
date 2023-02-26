@@ -19,6 +19,7 @@ import {useEffect, useState} from "react";
 import {AppDispatch} from "../../store";
 import Input from "../../components/input/Input";
 import ButtonLog from "../../components/button/ButtonLog";
+import {v4 as uuid} from "uuid";
 
 function Signin() {
   const dispatch = useDispatch<AppDispatch>();
@@ -36,7 +37,7 @@ function Signin() {
   }, [usuarioRedux.usuarioOn]);
 
   const Logar = () => {
-    const data = {email, password: senha};
+    const data = {id: uuid(), email, password: senha};
 
     dispatch(postLogin(data));
     console.log(data);
