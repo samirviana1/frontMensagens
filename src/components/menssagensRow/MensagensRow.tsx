@@ -28,6 +28,7 @@ const StyledTableCell = styled(TableCell)(({theme}) => ({
 interface mensagensRowProps {
   detalhamento: string;
   descricao: string;
+  uuid?: string;
   id: number;
   chave: string;
 }
@@ -35,6 +36,7 @@ interface mensagensRowProps {
 const MensagensRow: React.FC<mensagensRowProps> = ({
   detalhamento,
   descricao,
+  uuid,
   id,
   chave,
 }) => {
@@ -43,6 +45,7 @@ const MensagensRow: React.FC<mensagensRowProps> = ({
       <StyledTableCell align="center">{id}</StyledTableCell>
       <StyledTableCell align="center">{detalhamento}</StyledTableCell>
       <StyledTableCell align="center">{descricao}</StyledTableCell>
+      <StyledTableCell align="center">{uuid}</StyledTableCell>
       <StyledTableCell align="center">
         <ButtonEditAssignment id={chave}></ButtonEditAssignment>
         <ButtonDelAssignment id={chave}></ButtonDelAssignment>

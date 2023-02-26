@@ -52,6 +52,7 @@ export default function Tabela() {
                 <StyledTableCell align="center">ID</StyledTableCell>
                 <StyledTableCell align="center">Detalhes</StyledTableCell>
                 <StyledTableCell align="center">Descrição</StyledTableCell>
+                <StyledTableCell align="center">idUser</StyledTableCell>
                 <StyledTableCell align="center">Ações</StyledTableCell>
               </TableRow>
             </TableHead>
@@ -63,6 +64,7 @@ export default function Tabela() {
                     <MensagensRow
                       detalhamento={mensagens.description}
                       descricao={mensagens.title}
+                      uuid={mensagens.uid}
                       id={index + 1}
                       chave={mensagens.id}
                       key={mensagens.id}
