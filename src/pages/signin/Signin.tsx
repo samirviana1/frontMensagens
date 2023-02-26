@@ -40,7 +40,7 @@ function Signin() {
     const data = {id: uuid(), email, password: senha};
 
     dispatch(postLogin(data));
-    console.log(data);
+    console.log("UserLogado", data);
   };
   return (
     <Container component="main" maxWidth="xs">
