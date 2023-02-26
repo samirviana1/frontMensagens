@@ -84,7 +84,6 @@ function Signup() {
   const cadastrar = () => {
     if (handleSignup()) {
       const usuarioNovo: Partial<Usuario> = {
-        id: uuid(),
         name,
         email,
         password: senha,
