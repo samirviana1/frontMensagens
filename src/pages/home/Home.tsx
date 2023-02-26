@@ -64,7 +64,7 @@ function Home() {
 
     setDescricao("");
     setDetalhamento("");
-    console.log(listaMensagem);
+    console.log("lista", listaMensagem);
   };
   return (
     <>
