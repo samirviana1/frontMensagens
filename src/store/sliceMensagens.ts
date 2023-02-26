@@ -61,10 +61,9 @@ export const getIdStickynotes = createAsyncThunk(
   async (uid, {dispatch}) => {
     const response = await instace.doGet(`/notes/${uid}`);
     if (response?.status !== 200) {
-      dispatch(setNovaMensagem([]));
       return;
     }
-    dispatch(setNovaMensagem(response.data.dados));
+    return response.data.dados;
   }
 );
 
@@ -75,7 +74,7 @@ export const postStickynotes = createAsyncThunk(
     if (response?.data !== 200) {
       return null;
     }
-    dispatch(getIdStickynotes());
+    return response?.data;
   }
 );
 
@@ -136,6 +135,9 @@ const mensagensSlice = createSlice({
     },
   },
   extraReducers: ({addCase}) => {
+    addCase(postStickynotes.fulfilled, (state, action) => {
+      state.listaMensagem = action.payload;
+    });
     addCase(putStickynotes.fulfilled, (state, action) => {
       state.listaMensagem = action.payload;
     });
