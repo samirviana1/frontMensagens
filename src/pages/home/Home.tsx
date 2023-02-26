@@ -33,12 +33,10 @@ function Home() {
   const noteUserLogado = useSelector(getIdStickynotes);
 
   useEffect(() => {
-    dispacth(userId);
-    if (!userId) {
+    if (usuarioOn === undefined) {
       navigate("/");
     }
-  }, []);
-  console.log("usuarioOn", userId);
+  }, [usuarioOn]);
 
   useEffect(() => {
     dispacth(noteUserLogado);
