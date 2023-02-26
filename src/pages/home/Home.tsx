@@ -42,7 +42,7 @@ function Home() {
 
   useEffect(() => {
     dispacth(noteUserLogado);
-  }, []);
+  }, [noteUserLogado]);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
