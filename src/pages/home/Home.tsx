@@ -42,7 +42,7 @@ function Home() {
 
   useEffect(() => {
     dispacth(getall);
-  }, []);
+  }, [getall]);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
