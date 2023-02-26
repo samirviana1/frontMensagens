@@ -33,7 +33,7 @@ function Home() {
     if (!userLogon.usuarioOn) {
       navigate("/");
     }
-  }, []);
+  }, [userLogon.usuarioOn]);
   console.log("usuarioOn", usuarioOn);
 
   useEffect(() => {
