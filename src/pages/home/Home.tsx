@@ -37,7 +37,7 @@ function Home() {
 
   useEffect(() => {
     dispacth(getIdStickynotes);
-  }, []);
+  }, [noteUserLogado]);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
