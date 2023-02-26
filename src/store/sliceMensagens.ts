@@ -139,10 +139,10 @@ const mensagensSlice = createSlice({
       state.mensagem = action.payload;
     });
     addCase(putStickynotes.fulfilled, (state, action) => {
-      state.listaMensagem = action.payload;
+      state.mensagem = action.payload;
     });
     addCase(deleteStickynotes.fulfilled, (state, action) => {
-      state.listaMensagem = action.payload;
+      state.mensagem = action.payload;
     });
   },
 });
