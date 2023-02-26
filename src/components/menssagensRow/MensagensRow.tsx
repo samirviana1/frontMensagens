@@ -29,7 +29,7 @@ interface mensagensRowProps {
   detalhamento: string;
   descricao: string;
   uuid?: string;
-  id: number;
+  id: string;
   chave: string;
 }
 

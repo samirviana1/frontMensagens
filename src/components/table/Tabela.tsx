@@ -59,13 +59,13 @@ export default function Tabela() {
 
             {row.length && (
               <TableBody>
-                {row.map((mensagens, index) => {
+                {row.map((mensagens) => {
                   return (
                     <MensagensRow
+                      id={mensagens.id}
                       detalhamento={mensagens.description}
                       descricao={mensagens.title}
                       uuid={mensagens.uid}
-                      id={index + 1}
                       chave={mensagens.id}
                       key={mensagens.id}
                     ></MensagensRow>
