@@ -30,7 +30,7 @@ export default function Tabela() {
     (state: TrabalhoDeModulo) => state.mensagens.listaMensagem
   );
   const [row, setRow] = useState<Mensagem[]>([]);
-  useEffect(() => {
+  /*useEffect(() => {
     if (listaMensagem.length) {
       const minhaMensagens = listaMensagem.filter(
         (i) => i.uid === usuarioOn?.id
@@ -38,7 +38,7 @@ export default function Tabela() {
       setRow(minhaMensagens);
       console.log("effect", minhaMensagens);
     }
-  }, [listaMensagem]);
+  }, [listaMensagem]);*/
   return (
     <>
       {row.length ? (
