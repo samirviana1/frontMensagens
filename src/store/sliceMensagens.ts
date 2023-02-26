@@ -136,7 +136,7 @@ const mensagensSlice = createSlice({
   },
   extraReducers: ({addCase}) => {
     addCase(postStickynotes.fulfilled, (state, action) => {
-      state.listaMensagem = action.payload;
+      state.mensagem = action.payload;
     });
     addCase(putStickynotes.fulfilled, (state, action) => {
       state.listaMensagem = action.payload;
