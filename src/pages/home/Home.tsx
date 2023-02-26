@@ -30,10 +30,10 @@ function Home() {
   const userLogadoSelect = useSelector(postLogin);
 
   useEffect(() => {
-    if (!usuarioOn) {
-      navigate("/login");
+    if (usuarioOn === undefined) {
+      navigate("/");
     }
-  }, [usuarioOn]);
+  }, []);
   console.log("usuarioOn", usuarioOn);
 
   useEffect(() => {
