@@ -61,9 +61,10 @@ export const getIdStickynotes = createAsyncThunk(
   async (uid, {dispatch}) => {
     const response = await instace.doGet(`/notes/${uid}`);
     if (response?.status !== 200) {
-      return null;
+      dispatch(setNovaMensagem([]));
+      return;
     }
-    return response?.data;
+    dispatch(setNovaMensagem(response.data.dados));
   }
 );
 
