@@ -29,14 +29,14 @@ function Home() {
   const noteUserLogado = useSelector(getIdStickynotes);
 
   useEffect(() => {
-    if (userLogon.usuarioOn === undefined) {
+    if (usuarioOn === undefined) {
       navigate("/");
     }
   }, [usuarioOn]);
   console.log("usuarioOn", userLogon.usuarioOn);
 
   useEffect(() => {
-    dispacth(getIdStickynotes);
+    dispacth(getIdStickynotes());
   }, [noteUserLogado]);
 
   const [descricao, setDescricao] = useState("");
@@ -55,7 +55,6 @@ function Home() {
         uid: usuarioOn?.id,
       })
     );
-    console.log(postStickynotes);
     setDescricao("");
     setDetalhamento("");
   };
