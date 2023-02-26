@@ -66,6 +66,8 @@ function Home() {
     setDetalhamento("");
     console.log("lista", listaMensagem);
   };
+  console.log("teste", salvarMensagens);
+
   return (
     <>
       <Container component="main" min-width="xs" maxWidth="xl">
