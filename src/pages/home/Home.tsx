@@ -33,8 +33,8 @@ function Home() {
     if (userLogon.usuarioOn === undefined) {
       navigate("/");
     }
-  }, []);
-  console.log("usuarioOn", userLogon);
+  }, [userLogon.usuarioOn]);
+  console.log("usuarioOn", userLogon.usuarioOn);
 
   useEffect(() => {
     dispacth(getIdStickynotes());
