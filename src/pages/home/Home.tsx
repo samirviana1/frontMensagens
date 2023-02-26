@@ -35,6 +35,7 @@ function Home() {
     }
   }, [userLogon.usuarioOn]);
   console.log("usuarioOn", userLogon.usuarioOn);
+  console.log("userPost", userLogadoSelect);
 
   useEffect(() => {
     dispacth(getIdStickynotes());
