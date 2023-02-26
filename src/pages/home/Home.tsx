@@ -36,7 +36,7 @@ function Home() {
   console.log("usuarioOn", userLogon.usuarioOn);
 
   useEffect(() => {
-    dispacth(getIdStickynotes());
+    dispacth(noteUserLogado);
   }, [noteUserLogado]);
 
   const [descricao, setDescricao] = useState("");
