@@ -59,7 +59,7 @@ function Home() {
         uid: usuarioOn?.id,
       })
     );
-    console.log();
+    console.log(postStickynotes);
 
     setDescricao("");
     setDetalhamento("");
