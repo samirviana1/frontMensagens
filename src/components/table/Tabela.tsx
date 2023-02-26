@@ -52,7 +52,7 @@ export default function Tabela() {
                 <StyledTableCell align="center">ID</StyledTableCell>
                 <StyledTableCell align="center">Detalhes</StyledTableCell>
                 <StyledTableCell align="center">Descrição</StyledTableCell>
-                <StyledTableCell align="center">idUser</StyledTableCell>
+                <StyledTableCell align="center">userId</StyledTableCell>
                 <StyledTableCell align="center">Ações</StyledTableCell>
               </TableRow>
             </TableHead>
