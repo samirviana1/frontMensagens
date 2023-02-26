@@ -66,7 +66,7 @@ function Home() {
     setDetalhamento("");
     console.log("lista", listaMensagem);
   };
-  console.log("teste", salvarMensagens);
+  console.log("teste", salvarMensagens());
 
   return (
     <>
