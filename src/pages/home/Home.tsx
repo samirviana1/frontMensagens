@@ -42,7 +42,7 @@ function Home() {
 
   useEffect(() => {
     dispacth(getMensagemPorId);
-  }, [getMensagemPorId]);
+  }, []);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
