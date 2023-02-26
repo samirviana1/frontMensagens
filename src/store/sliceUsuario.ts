@@ -64,6 +64,17 @@ export const postLogin = createAsyncThunk(
   }
 );
 
+export const getIdUserLogado = createAsyncThunk(
+  "getIdUserLogado/get",
+  async (id, {dispatch}) => {
+    const response = await instace.doGet(`/users/${id}`);
+    if (response?.status !== 200) {
+      return null;
+    }
+    return response?.data;
+  }
+);
+
 export const getAllUser = createAsyncThunk(
   "getAllUser/get",
   async (_, {dispatch}) => {
