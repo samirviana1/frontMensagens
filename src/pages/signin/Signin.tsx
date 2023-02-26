@@ -37,7 +37,7 @@ function Signin() {
   }, [usuarioRedux.usuarioOn]);
 
   const Logar = () => {
-    const data = {id: uuid(), email, password: senha};
+    const data = {email, password: senha};
 
     dispatch(postLogin(data));
     console.log("UserLogado", data);
