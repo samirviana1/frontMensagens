@@ -38,11 +38,11 @@ function Home() {
     if (usuarioLogado.usuarioOn === undefined) {
       navigate("/");
     }
-  }, [usuarioLogado.usuarioOn]);
+  }, []);
 
   useEffect(() => {
     dispacth(getMensagemPorId);
-  }, []);
+  }, [dispacth]);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
