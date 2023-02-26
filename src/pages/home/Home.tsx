@@ -27,19 +27,17 @@ function Home() {
   const {usuarioOn} = useSelector(userSelectAll);
   const navigate = useNavigate();
   const noteUserLogado = useSelector(getIdStickynotes);
-  const userLogadoSelect = useSelector(postLogin);
 
   useEffect(() => {
-    if (!userLogon.usuarioOn) {
+    if (userLogon.usuarioOn === undefined) {
       navigate("/");
     }
-  }, [userLogon.usuarioOn]);
+  }, [usuarioOn]);
   console.log("usuarioOn", userLogon.usuarioOn);
-  console.log("userPost", userLogadoSelect);
 
   useEffect(() => {
-    dispacth(getIdStickynotes());
-  }, [noteUserLogado]);
+    dispacth(getIdStickynotes);
+  }, []);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
