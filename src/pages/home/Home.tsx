@@ -31,6 +31,7 @@ function Home() {
   const userId = useSelector(getIdUserLogado);
   const navigate = useNavigate();
   const noteUserLogado = useSelector(getIdStickynotes);
+  const createNota = useSelector(postStickynotes);
 
   useEffect(() => {
     if (usuarioOn === undefined) {
@@ -59,7 +60,8 @@ function Home() {
         uid: usuarioOn?.id,
       })
     );
-    console.log(postStickynotes);
+
+    console.log(createNota);
 
     setDescricao("");
     setDetalhamento("");
