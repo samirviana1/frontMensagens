@@ -33,7 +33,7 @@ function Home() {
     if (usuarioOn === undefined) {
       navigate("/");
     }
-  }, []);
+  }, [usuarioOn]);
   console.log("usuarioOn", usuarioOn);
 
   useEffect(() => {
