@@ -31,7 +31,7 @@ function Home() {
   const usuarioLogado = useSelector(userSelectAll);
   const userId = useSelector(getIdUserLogado);
   const navigate = useNavigate();
-  const noteUserLogado = useSelector(getIdStickynotes);
+  const getall = useSelector(getAllStickynotes);
   const listaMensagem = useSelector(mensagensSelectAll);
 
   useEffect(() => {
@@ -41,8 +41,8 @@ function Home() {
   }, [usuarioLogado.usuarioOn]);
 
   useEffect(() => {
-    dispacth(noteUserLogado);
-  }, [noteUserLogado]);
+    dispacth(getall);
+  }, []);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
