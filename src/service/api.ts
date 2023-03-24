@@ -7,7 +7,7 @@ class Api {
 
   setBaseURL() {
     return axios.create({
-      baseURL: "api-recados-growdev.vercel.app",
+      baseURL: "http://api-recados-growdev.vercel.app",
     });
   }
 
