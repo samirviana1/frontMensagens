@@ -30,6 +30,7 @@ export default function Tabela() {
     (state: TrabalhoDeModulo) => state?.mensagens?.listaMensagem
   );
   const [row, setRow] = useState<Mensagem[]>([]);
+  debugger;
   useEffect(() => {
     console.table(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
