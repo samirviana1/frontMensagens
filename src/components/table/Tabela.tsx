@@ -27,13 +27,13 @@ const StyledTableCell = styled(TableCell)(({theme}) => ({
 export default function Tabela() {
   const {usuarioOn} = useSelector(userSelectAll);
   const listaMensagem = useSelector(
-    (state: TrabalhoDeModulo) => state.mensagens.listaMensagem
+    (state: TrabalhoDeModulo) => state?.mensagens?.listaMensagem
   );
   const [row, setRow] = useState<Mensagem[]>([]);
   useEffect(() => {
     console.table(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
-    if (listaMensagem.length) {
+    if (listaMensagem?.length) {
       const minhaMensagens = listaMensagem.filter(
         (i) => i.uid === usuarioOn?.id
       );
