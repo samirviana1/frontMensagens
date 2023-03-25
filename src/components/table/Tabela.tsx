@@ -32,6 +32,7 @@ export default function Tabela() {
   );
 
   useEffect(() => {
+    debugger;
     console.table(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
     if (listaMensagem?.length) {
@@ -41,6 +42,7 @@ export default function Tabela() {
       setRow(minhaMensagens);
     }
   }, [listaMensagem]);
+
   return (
     <>
       {row.length ? (
