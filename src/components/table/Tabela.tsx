@@ -32,13 +32,11 @@ export default function Tabela() {
   const [row, setRow] = useState<Mensagem[]>([]);
   useEffect(() => {
     console.table(listaMensagem);
-
+    console.log("idUSER", usuarioOn?.id);
     if (listaMensagem.length) {
       const minhaMensagens = listaMensagem.filter(
         (i) => i.uid === usuarioOn?.id
       );
-      console.log("idUSER", usuarioOn?.id);
-
       setRow(minhaMensagens);
       console.log("effect", minhaMensagens);
     }
