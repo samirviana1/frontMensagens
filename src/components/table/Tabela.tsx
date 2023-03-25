@@ -38,7 +38,6 @@ export default function Tabela() {
         (i) => i.uid === usuarioOn?.id
       );
       setRow(minhaMensagens);
-      console.log("effect", minhaMensagens);
     }
   }, [listaMensagem]);
   return (
