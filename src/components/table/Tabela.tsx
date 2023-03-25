@@ -37,6 +37,8 @@ export default function Tabela() {
       const minhaMensagens = listaMensagem.filter(
         (i) => i.uid === usuarioOn?.id
       );
+      console.log("idUSER", usuarioOn?.id);
+
       setRow(minhaMensagens);
       console.log("effect", minhaMensagens);
     }
