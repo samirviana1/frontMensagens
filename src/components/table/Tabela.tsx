@@ -26,11 +26,11 @@ const StyledTableCell = styled(TableCell)(({theme}) => ({
 
 export default function Tabela() {
   const {usuarioOn} = useSelector(userSelectAll);
+  const [row, setRow] = useState<Mensagem[]>([]);
   const listaMensagem = useSelector(
     (state: TrabalhoDeModulo) => state?.mensagens?.listaMensagem
   );
-  const [row, setRow] = useState<Mensagem[]>([]);
-  debugger;
+
   useEffect(() => {
     console.table(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
