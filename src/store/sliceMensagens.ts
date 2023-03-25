@@ -71,10 +71,10 @@ export const postStickynotes = createAsyncThunk(
   "postStickynotes/post",
   async (body: object, {dispatch}) => {
     const response = await instace.doPost("/notes", body);
-    if (response?.data !== 200) {
+    if (response?.data.dados !== 200) {
       return null;
     }
-    return response?.data;
+    return response?.data.dados;
   }
 );
 
@@ -88,7 +88,7 @@ export const putStickynotes = createAsyncThunk(
     if (response?.status !== 200) {
       return null;
     }
-    return response?.data;
+    return response?.data.dados;
   }
 );
 
