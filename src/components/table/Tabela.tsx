@@ -35,7 +35,7 @@ export default function Tabela() {
     debugger;
     console.table(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
-    if (listaMensagem?.length !== 0) {
+    if (listaMensagem.length !== 0) {
       const minhaMensagens = listaMensagem.filter(
         (i) => i.uid === usuarioOn?.id
       );
