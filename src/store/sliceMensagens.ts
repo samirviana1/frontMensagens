@@ -69,7 +69,7 @@ export const getIdStickynotes = createAsyncThunk(
 
 export const postStickynotes = createAsyncThunk(
   "postStickynotes/post",
-  async (body: object, {dispatch}) => {
+  async (body: any, {dispatch}) => {
     const response = await instace.doPost("/notes", body);
     if (response?.data.dados !== 200) {
       return response?.data;
@@ -136,7 +136,7 @@ const mensagensSlice = createSlice({
   },
   extraReducers: ({addCase}) => {
     addCase(postStickynotes.fulfilled, (state, action) => {
-      state.listaMensagem = [state.listaMensagem, action.payload];
+      state.listaMensagem = [...state.listaMensagem, action.payload];
     });
     addCase(putStickynotes.fulfilled, (state, action) => {
       state.listaMensagem = action.payload;
