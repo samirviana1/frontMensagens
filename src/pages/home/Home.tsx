@@ -19,21 +19,14 @@ import {TrabalhoDeModulo} from "../../store/rootReducer";
 import {useEffect, useState} from "react";
 import ModalMsg from "../../components/modal/Modal";
 import {AppDispatch} from "../../store";
-import {
-  getIdUserLogado,
-  postLogin,
-  userSelectAll,
-} from "../../store/sliceUsuario";
+import {userSelectAll} from "../../store/sliceUsuario";
 import {useNavigate} from "react-router-dom";
 
 function Home() {
   const dispacth = useDispatch<AppDispatch>();
   const usuarioLogado = useSelector(userSelectAll);
-  const userId = useSelector(getIdUserLogado);
   const navigate = useNavigate();
   const getMensagemPorId = useSelector(getIdStickynotes);
-  const listaMensagem = useSelector(mensagensSelectAll);
-
   useEffect(() => {
     if (usuarioLogado.usuarioOn === undefined) {
       navigate("/");
