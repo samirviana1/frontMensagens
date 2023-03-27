@@ -33,7 +33,7 @@ export default function Tabela() {
 
   useEffect(() => {
     debugger;
-    console.table(listaMensagem);
+    console.log(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
     if (listaMensagem) {
       const minhaMensagens = listaMensagem.filter(
