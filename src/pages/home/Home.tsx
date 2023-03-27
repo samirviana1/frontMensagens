@@ -61,10 +61,8 @@ function Home() {
     dispacth(postStickynotes(newMensagem));
     console.log(newMensagem);
     console.log(usuarioLogado.usuarioOn?.id);
-
     setDescricao("");
     setDetalhamento("");
-    console.log("lista", listaMensagem);
   };
 
   return (
