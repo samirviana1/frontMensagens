@@ -28,7 +28,7 @@ export default function Tabela() {
   const {usuarioOn} = useSelector(userSelectAll);
   const [row, setRow] = useState<Mensagem[]>([]);
   const listaMensagem = useSelector(
-    (state: TrabalhoDeModulo) => state?.mensagens?.listaMensagem
+    (state: TrabalhoDeModulo) => state.mensagens.listaMensagem
   );
 
   useEffect(() => {
@@ -37,8 +37,10 @@ export default function Tabela() {
     // console.log("idUSER", usuarioOn?.id);
     // const minhaMensagens = listaMensagem.filter((i) => i.uid === usuarioOn?.id);
     // console.log("teste", minhaMensagens);
-    setRow(listaMensagem);
-    console.log(setRow);
+
+    if (listaMensagem.length) {
+      setRow(listaMensagem);
+    }
   }, [listaMensagem]);
 
   return (
