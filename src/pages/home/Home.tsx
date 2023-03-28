@@ -33,9 +33,9 @@ function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    dispacth(getMensagemPorId);
-  }, [dispacth]);
+  // useEffect(() => {
+  //   dispacth(getMensagemPorId);
+  // }, [dispacth]);
 
   const [descricao, setDescricao] = useState("");
   const [detalhamento, setDetalhamento] = useState("");
