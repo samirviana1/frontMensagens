@@ -35,10 +35,10 @@ export default function Tabela() {
     debugger;
     console.table(listaMensagem);
     console.log("idUSER", usuarioOn?.id);
+    const minhaMensagens = listaMensagem.filter((i) => i.uid === usuarioOn?.id);
+    console.log(minhaMensagens);
+
     if (listaMensagem?.length) {
-      const minhaMensagens = listaMensagem.filter(
-        (i) => i.uid === usuarioOn?.id
-      );
       setRow(minhaMensagens);
       console.log(setRow);
     }
