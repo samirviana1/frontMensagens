@@ -42,7 +42,7 @@ export default function Tabela() {
       setRow(listaMensagem);
     }
   }, [listaMensagem]);
-  setRow(listaMensagem);
+
   return (
     <>
       {row.length ? (
