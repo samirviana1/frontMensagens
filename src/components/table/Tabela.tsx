@@ -37,11 +37,8 @@ export default function Tabela() {
     // console.log("idUSER", usuarioOn?.id);
     // const minhaMensagens = listaMensagem.filter((i) => i.uid === usuarioOn?.id);
     // console.log("teste", minhaMensagens);
-
-    if (listaMensagem.length) {
-      setRow(listaMensagem);
-      console.log(setRow);
-    }
+    setRow(listaMensagem);
+    console.log(setRow);
   }, [listaMensagem]);
 
   return (
