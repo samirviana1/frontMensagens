@@ -38,7 +38,7 @@ export default function Tabela() {
     // const minhaMensagens = listaMensagem.filter((i) => i.uid === usuarioOn?.id);
     // console.log("teste", minhaMensagens);
 
-    if (listaMensagem?.length) {
+    if (listaMensagem.length) {
       setRow(listaMensagem);
       console.log(setRow);
     }
