@@ -33,13 +33,13 @@ export default function Tabela() {
 
   useEffect(() => {
     debugger;
-    console.table(listaMensagem);
-    console.log("idUSER", usuarioOn?.id);
-    const minhaMensagens = listaMensagem.filter((i) => i.uid === usuarioOn?.id);
-    console.log("teste", minhaMensagens);
+    // console.table(listaMensagem);
+    // console.log("idUSER", usuarioOn?.id);
+    // const minhaMensagens = listaMensagem.filter((i) => i.uid === usuarioOn?.id);
+    // console.log("teste", minhaMensagens);
 
     if (listaMensagem?.length) {
-      setRow(minhaMensagens);
+      setRow(listaMensagem);
       console.log(setRow);
     }
   }, [listaMensagem]);
